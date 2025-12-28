@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900 text-white gap-4 p-10">
+        <a href="/logout" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-600 cursor-pointer float-right">Logout</a>
+        <h5 class="mb-2 text-zinc-400">Edit your post.</h5>
+        <form method="post" action="/update/<%= post._id %>">
+            <textarea class=" resize-none border px-3 py-2 rounded-md bg-transparent border-2 border-zinc-800 outline-none mb-3 w-2/3 h-20 block" name="content" placeholder="Edit your post here..."><%= post.content %></textarea>
+            <input type="submit" value="Make changes" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 cursor-pointer block">
+        </form>
+    </div>
+</body>
+</html>
