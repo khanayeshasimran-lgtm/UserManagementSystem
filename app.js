@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const Path = require('path');
+const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.json());
@@ -118,4 +119,7 @@ function isloggedIn(req, res, next) {
   }
 }
 
-app.listen(3000);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

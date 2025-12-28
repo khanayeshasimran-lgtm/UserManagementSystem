@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/myapp');
+mongoose.connect('mongodb://127.0.0.1:27017/usermanagement')
 const userSchema = mongoose.Schema({
+
   username: String,
   name: String,
   email: String,
@@ -11,5 +12,3 @@ const userSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('user', userSchema);
-
-
